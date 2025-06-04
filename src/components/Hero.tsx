@@ -28,11 +28,7 @@ const Hero = () => {
             <div className="relative">
               <span className="text-9xl handwriting text-coral-600 font-bold leading-none">Prachi</span>
             </div>
-            <p className="text-4xl font-inter font-light mt-4 mb-2">and I am into...</p>
-            <div className="text-lg font-inter text-gray-700 leading-relaxed">
-              <p>learning experience design, program design, project management,</p>
-              <p>facilitation, zine making, illustration, communications</p>
-            </div>
+            <p className="text-4xl font-inter font-light mt-2 mb-6">and I am into...</p>
           </div>
         </div>
       </div>
