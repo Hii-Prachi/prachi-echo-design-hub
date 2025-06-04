@@ -1,44 +1,43 @@
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 
 const SelectedWorks = () => {
   const projects = [
     {
       title: "Learning Experience Platform",
       type: "UX Design & Research",
-      image: "🎓",
-      color: "bg-blue-50 hover:bg-blue-100"
+      emoji: "📚",
+      description: "Designing intuitive learning experiences for educators and students"
     },
     {
       title: "Product Design System", 
       type: "Design Systems",
-      image: "💻",
-      color: "bg-purple-50 hover:bg-purple-100"
+      emoji: "💻",
+      description: "Scalable design components and guidelines for consistent user experiences"
     },
     {
       title: "Facilitation Workshop",
       type: "Program Management", 
-      image: "🎯",
-      color: "bg-green-50 hover:bg-green-100"
+      emoji: "🎯",
+      description: "Leading collaborative sessions and managing cross-functional teams"
     },
     {
       title: "Creative Zines",
       type: "Illustration & Publishing",
-      image: "🎨", 
-      color: "bg-pink-50 hover:bg-pink-100"
+      emoji: "🎨", 
+      description: "Handmade zines combining illustration, typography, and storytelling"
     },
     {
       title: "Digital Communication Strategy",
       type: "Communications",
-      image: "📱",
-      color: "bg-orange-50 hover:bg-orange-100"
+      emoji: "📱",
+      description: "Developing cohesive brand messaging across digital platforms"
     },
     {
       title: "Community Workshop Series",
       type: "Facilitation",
-      image: "👥",
-      color: "bg-teal-50 hover:bg-teal-100"
+      emoji: "👥",
+      description: "Designing and facilitating creative workshops for diverse audiences"
     }
   ];
 
@@ -52,28 +51,22 @@ const SelectedWorks = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card 
+            <div 
               key={index} 
-              className={`group cursor-pointer animate-fade-in border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${project.color}`}
+              className="group cursor-pointer animate-fade-in bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => console.log(`Clicked on ${project.title}`)}
             >
-              <CardContent className="p-0">
-                <div className="aspect-[4/3] flex flex-col justify-center items-center text-center p-8">
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {project.image}
-                  </div>
-                  <p className="text-xs font-inter font-medium text-coral-600 tracking-wider uppercase mb-2">
-                    {project.type}
-                  </p>
-                  <h3 className="font-playfair text-lg font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
-              </CardContent>
-            </Card>
+              <div className="mb-4">
+                <div className="text-4xl mb-3">{project.emoji}</div>
+                <p className="text-xs font-inter font-medium text-coral-600 tracking-wider uppercase mb-2">
+                  {project.type}
+                </p>
+                <h3 className="font-playfair text-xl font-semibold mb-3">{project.title}</h3>
+                <p className="font-inter text-sm text-gray-600 leading-relaxed">{project.description}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
