@@ -6,26 +6,38 @@ const SelectedWorks = () => {
     {
       title: "Learning Experience Platform",
       type: "UX Design & Research",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-      description: "Designing intuitive learning experiences"
+      emoji: "📚",
+      description: "Designing intuitive learning experiences for educators and students"
     },
     {
-      title: "Product Design System",
+      title: "Product Design System", 
       type: "Design Systems",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      description: "Scalable design components"
+      emoji: "💻",
+      description: "Scalable design components and guidelines for consistent user experiences"
     },
     {
       title: "Facilitation Workshop",
-      type: "Program Management",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
-      description: "Leading collaborative sessions"
+      type: "Program Management", 
+      emoji: "🎯",
+      description: "Leading collaborative sessions and managing cross-functional teams"
     },
     {
       title: "Creative Zines",
       type: "Illustration & Publishing",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop",
-      description: "Handmade zines and illustrations"
+      emoji: "🎨", 
+      description: "Handmade zines combining illustration, typography, and storytelling"
+    },
+    {
+      title: "Digital Communication Strategy",
+      type: "Communications",
+      emoji: "📱",
+      description: "Developing cohesive brand messaging across digital platforms"
+    },
+    {
+      title: "Community Workshop Series",
+      type: "Facilitation",
+      emoji: "👥",
+      description: "Designing and facilitating creative workshops for diverse audiences"
     }
   ];
 
@@ -39,27 +51,20 @@ const SelectedWorks = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="group cursor-pointer animate-fade-in"
+              className="group cursor-pointer animate-fade-in bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative overflow-hidden rounded-lg mb-4 aspect-[4/3]">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-coral-600/0 group-hover:bg-coral-600/10 transition-colors duration-300"></div>
-              </div>
-              <div>
-                <p className="text-xs font-inter font-medium text-coral-600 tracking-wider uppercase mb-1">
+              <div className="mb-4">
+                <div className="text-4xl mb-3">{project.emoji}</div>
+                <p className="text-xs font-inter font-medium text-coral-600 tracking-wider uppercase mb-2">
                   {project.type}
                 </p>
-                <h3 className="font-playfair text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="font-inter text-sm text-gray-600">{project.description}</p>
+                <h3 className="font-playfair text-xl font-semibold mb-3">{project.title}</h3>
+                <p className="font-inter text-sm text-gray-600 leading-relaxed">{project.description}</p>
               </div>
             </div>
           ))}
